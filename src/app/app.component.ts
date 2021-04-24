@@ -1,5 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Employee } from './employee';
 import { EmployeeService } from './employee.service';
 
@@ -8,10 +8,14 @@ import { EmployeeService } from './employee.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'EmployeeManagement';
   public employees: Employee[] = [];
   constructor(private employeeService: EmployeeService){}
+  
+  ngOnInit(){
+    this.getEmployees();
+  }
 
   public getEmployees(): void{
   
