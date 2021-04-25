@@ -25,7 +25,7 @@ export class EmployeeService{
 
     }
 
-    public updateEmployee(employee: Employee): Observable<Employee>{
+    public editEmployee(employee: Employee): Observable<Employee>{
         return this.http.put<any>(`${this.apiServerUrl}/employee/update`,employee);
 
     }
